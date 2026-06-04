@@ -1,8 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { Phone, Search, MapPin, ShieldCheck, Ruler, Star, ArrowRight, ExternalLink } from 'lucide-react'
+import { Phone, MapPin, ShieldCheck, Ruler, Star, ArrowRight, ExternalLink } from 'lucide-react'
 import './index.css'
-import logo from './assets/SERHAT.png'
 import hero from './assets/cam-balkon-izmir-4000x9000-1.webp'
 import whatsappIcon from './assets/whatsapp.png'
 import phoneIcon from './assets/phone-call.png'
@@ -35,12 +34,24 @@ const highlights = [
   { icon: Star, title: 'Özenli İşçilik', text: 'Montajdan teslimata kadar düzenli, hızlı ve güvenilir süreç.' }
 ]
 
+function BrandLogo({ className = '', small = false, light = false }) {
+  return <span className={`inline-flex flex-col items-center justify-center font-sans leading-none ${className}`}>
+    <span className={`${small ? 'text-[1.55rem] sm:text-[1.8rem]' : 'text-[1.75rem]'} font-black`}>
+      <span className={light ? 'text-white' : 'text-blue-950'}>SERHAT</span>
+      <span className={`mx-2 ${light ? 'text-blue-100' : 'text-black'}`}>YAPI</span>
+    </span>
+    <span className={`${small ? 'text-[0.62rem] sm:text-[0.72rem]' : 'text-[0.72rem]'} mt-1 font-black ${light ? 'text-blue-100' : 'text-black'}`}>
+      CAM BALKON SISTEMLERI
+    </span>
+  </span>
+}
+
 function App() {
   return <main className="min-h-screen overflow-hidden">
     <header className="fixed left-0 right-0 top-0 z-40 border-b border-white/20 bg-white/90 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
-        <a href="#anasayfa" className="flex items-center gap-3" aria-label="Serhat Yapı anasayfa">
-          <img src={logo} alt="Serhat Yapı Cam Balkon Sistemleri Logo" className="h-12 w-auto object-contain" />
+        <a href="#anasayfa" className="flex items-center" aria-label="Serhat Yapı anasayfa">
+          <BrandLogo small className="h-12 w-44" />
         </a>
         <div className="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
           <a href="#hizmetler" className="hover:text-blue-900">Hizmetler</a>
@@ -49,7 +60,7 @@ function App() {
           <a href="#iletisim" className="hover:text-blue-900">İletişim</a>
         </div>
         <a href={`tel:${phone}`} className="inline-flex items-center gap-2 rounded-full bg-blue-950 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-blue-950/20 hover:bg-blue-900" aria-label="Telefon ile ara">
-          <Search size={17} />
+          <Phone size={17} />
           <span className="hidden sm:inline">Ara</span>
         </a>
       </nav>
@@ -136,14 +147,17 @@ function App() {
       </div>
     </section>
 
-    <section id="iletisim" className="bg-blue-950 py-16 text-white">
+    <footer id="iletisim" className="bg-blue-950 text-white">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-2 md:px-6">
-        <div>
+        <div className="py-16">
+          <a href="#anasayfa" className="mb-8 inline-flex" aria-label="Serhat Yapı anasayfa">
+            <BrandLogo light className="h-14 w-52" />
+          </a>
           <p className="font-bold text-blue-200">İletişim</p>
           <h2 className="mt-2 text-3xl font-black md:text-5xl">Keşif ve fiyat bilgisi için hemen ulaşın</h2>
           <p className="mt-4 text-slate-200">Telefonla arayabilir, WhatsApp üzerinden fotoğraf göndererek hızlı bilgi alabilirsiniz.</p>
         </div>
-        <div className="grid gap-4">
+        <div className="grid gap-4 py-16">
           <a href={`tel:${phone}`} className="flex items-center gap-4 rounded-3xl bg-white/10 p-5 ring-1 ring-white/15 hover:bg-white/15">
             <img src={phoneIcon} alt="Telefon ikonu" className="h-12 w-12 rounded-2xl bg-white p-2" />
             <span><strong className="block text-lg">Telefon</strong>{phone}</span>
@@ -158,10 +172,9 @@ function App() {
           </a>
         </div>
       </div>
-    </section>
-
-    <footer className="bg-slate-950 px-4 py-8 text-center text-sm text-slate-300">
-      <p>© {new Date().getFullYear()} Serhat Yapı Cam Balkon Sistemleri. Tüm hakları saklıdır.</p>
+      <div className="border-t border-white/10 px-4 py-6 text-center text-sm text-slate-300">
+        <p>© {new Date().getFullYear()} Serhat Yapı Cam Balkon Sistemleri. Tüm hakları saklıdır.</p>
+      </div>
     </footer>
 
     <a href={whatsappUrl} className="fixed bottom-5 right-5 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 shadow-2xl shadow-green-950/30 hover:scale-105" aria-label="WhatsApp mesaj gönder">
