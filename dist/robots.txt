@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bulutbirol.github.io/serhat-yapi-react/sitemap.xml
+Sitemap: https://serhatcambalkon.com/sitemap.xml
