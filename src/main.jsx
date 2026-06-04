@@ -72,7 +72,7 @@ function App() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:px-6 md:py-24">
         <div className="text-white">
           <p className="mb-4 inline-flex rounded-full bg-white/10 px-4 py-2 text-sm font-semibold ring-1 ring-white/20">Bursa Cam Balkon Sistemleri</p>
-          <h1 className="text-4xl font-black tracking-tight md:text-6xl">Serhat Yapı ile modern, güvenli ve şık yaşam alanları</h1>
+          <h1 className="text-4xl font-black tracking-tight md:text-6xl">Bursa Cam Balkon Sistemleri | Serhat Yapı</h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200">Cam balkon, PVC sistemleri, alüminyum doğrama, korkuluk ve duşakabin uygulamalarında ölçüye özel çözümler.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={whatsappUrl} className="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-6 py-3 font-bold text-white shadow-xl shadow-green-950/20 hover:bg-green-600">
