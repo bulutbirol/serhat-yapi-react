@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/serhat-yapi-react/',
+  base: './',
   plugins: [react(), tailwindcss()]
 })
